@@ -1,5 +1,8 @@
 const TestContract = artifacts.require("TestContract");
 
-module.exports = function(deployer) {
-  deployer.deploy(TestContract);
+module.exports =async function(deployer) {
+ await deployer.deploy(TestContract);
+ const  testcontract= await TestContract.deployed();
+  console.log("Deployed on" , testcontract.address)
+
 };
